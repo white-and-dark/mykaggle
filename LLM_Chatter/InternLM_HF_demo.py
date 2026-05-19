@@ -2,7 +2,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # 指定本地模型路径
-local_model_path = "/workspace/models/internlm2-1_8b"
+local_model_path = "/kaggle/working/models/internlm2-1_8b"
 
 tokenizer = AutoTokenizer.from_pretrained(
     "internlm/internlm2-1_8b",      # 线上模型名

@@ -15,7 +15,7 @@ int main(int argc, char ** argv) {
     std::setlocale(LC_NUMERIC, "C");
 
     // path to the model gguf file
-    std::string model_path = "/workspace/models/internlm2-1_8b/internlm2-1.8B-F32.gguf";
+    std::string model_path = "/kaggle/working/models/internlm2-1_8b/internlm2-1.8B-F32.gguf";
     // prompt to generate text from
     std::string prompt = "Hello my name is";
     // number of layers to offload to the GPU

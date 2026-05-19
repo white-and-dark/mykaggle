@@ -1,4 +1,4 @@
-# python convert_hf_to_gguf.py /workspace/models/internlm2-1_8b --outtype f32
+# python convert_hf_to_gguf.py /kaggle/working/models/internlm2-1_8b --outtype f32
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 

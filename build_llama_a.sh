@@ -1,0 +1,30 @@
+#!/bin/bash
+set -e
+
+git clone https://github.com/white-and-dark/mykaggle.git
+/usr/bin/code-server --install-extension ms-python.python --install-extension ms-pyright.pyright --install-extension KylinIdeTeam.kylin-cpp-pack --install-extension twxs.cmake --install-extension ms-vscode.cmake-tools
+
+# 1. 安装 Miniconda
+echo "安装 Miniconda..."
+wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+bash miniconda.sh -b -p /kaggle/working/miniconda3
+
+/kaggle/working/miniconda3/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+/kaggle/working/miniconda3/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+
+/kaggle/working/miniconda3/bin/conda --version
+
+# 2. 配置环境变量
+echo "配置环境变量..."
+export PATH="/kaggle/working/miniconda3/bin:$PATH"
+echo "export PATH=/kaggle/working/miniconda3/bin:\$PATH" >> ~/.bashrc
+
+ln -sf /usr/local/nvidia/lib64/libcuda.so.1 /usr/lib64/libcuda.so
+
+# 4. 创建 Python 3.10.20 环境
+echo "创建环境 py310 (Python 3.10.20)..."
+conda create -n py310 python=3.10.20 -y
+
+conda init bash
+conda activate py310
+python --version
