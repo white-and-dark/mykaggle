@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-git clone https://github.com/white-and-dark/mykaggle.git
+# git clone https://github.com/white-and-dark/mykaggle.git
 /usr/bin/code-server --install-extension ms-python.python --install-extension ms-pyright.pyright --install-extension KylinIdeTeam.kylin-cpp-pack --install-extension twxs.cmake --install-extension ms-vscode.cmake-tools
 
 # 1. 安装 Miniconda
