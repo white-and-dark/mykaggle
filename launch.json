@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: 可进入系统代码",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            // 关键配置：不跳过任何库
+            "justMyCode": false,
+            // 额外：如果想指定conda环境，加上下面这行
+            "python": "/root/miniconda3/envs/py310/bin/python"
+        }
+    ]
+}

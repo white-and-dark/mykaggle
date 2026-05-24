@@ -16,7 +16,12 @@ sampling_params = SamplingParams(temperature=0.8, top_p=0.95)
 
 def main():
     # Create an LLM.
-    llm = LLM(model="facebook/opt-125m")
+    llm = LLM(
+        model="/kaggle/working/Llama-3.2-3B-Instruct",
+        max_model_len=4096,    # 强制限制长度，解决显存
+        gpu_memory_utilization=0.9,
+        tensor_parallel_size=2,
+    )
     # Generate texts from the prompts.
     # The output is a list of RequestOutput objects
     # that contain the prompt, generated text, and other information.
